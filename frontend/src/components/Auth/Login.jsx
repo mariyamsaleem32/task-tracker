@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
+import API from '../../utils/axios'; 
 import { Form, Input, Button, Card } from 'antd';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
+import {useState} from 'react'
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const onFinish = async (values) => {
-    setLoading(true);
     try {
-        await signInWithEmailAndPassword(auth, values.email, values.password);
-      navigate('/');
+      const { data } = await API.post('/login', values);
+      localStorage.setItem('token', data.token);
+      navigate('/taskboard');
     } catch (error) {
-      alert(error.message); // Show proper error to user
+      console.error(error.response.data.message);
     }
-    setLoading(false);
   };
+  
 
   return (
     <Card title="Login" style={{ width: 300, margin: 'auto', marginTop: 100 }}>
