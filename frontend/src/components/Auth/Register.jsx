@@ -1,16 +1,32 @@
-import React, { useState } from 'react'; // Import useState to handle loading state
-import { Form, Input, Button, Card } from 'antd';
+import React, { useState } from 'react';
+import { Form, Input, Button, Card, notification } from 'antd';
 import { useNavigate, Link } from 'react-router-dom';
-import API from '../../utils/axios'; 
+import API from '../../utils/axios';
 
 const Register = () => {
-  const [loading, setLoading] = useState(false); // Define loading state
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const onFinish = async (values) => {
-    setLoading(true); // Set loading to true before
+    setLoading(true); // Set loading to true before API call
 
+    try {
+      const response = await API.post('/register', values);
+      notification.success({
+        message: 'Registration Successful',
+        description: 'You can now log in to your account.',
+      });
+      navigate('/login');  // Redirect to login page
+    } catch (error) {
+      notification.error({
+        message: 'Registration Failed',
+        description: error.response?.data?.message || 'Something went wrong. Please try again.',
+      });
+    } finally {
+      setLoading(false);  // Reset loading state after the API call is done
+    }
   };
+
   return (
     <Card title="Register" style={{ width: 300, margin: 'auto', marginTop: 100 }}>
       <Form onFinish={onFinish}>
