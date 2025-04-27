@@ -84,20 +84,20 @@ const TaskBoard = () => {
       </Button>
 
       {/* Search Bar */}
-      
-      <Button type="primary" onClick={() => setIsModalOpen(true)} style={{ marginBottom: 20 }}>
-        Add Task
-      </Button>
-
       <Input
-        placeholder="Search tasks..."
+        placeholder="Search tasks by title..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        style={{ marginBottom: 20, width: '300px' }}
+        style={{ marginBottom: 20, width: '300px', marginRight: 10 }}
       />
-      
-      <Button type="primary" onClick={() => setIsModalOpen(true)} style={{ marginBottom: 20 ,borderRadius:'40px' }}>
-        Search
+
+      {/* Add Task Button with gap from search */}
+      <Button 
+        type="primary" 
+        onClick={() => setIsModalOpen(true)} 
+        style={{ marginBottom: 20 }}
+      >
+        Add Task
       </Button>
 
       <Modal
