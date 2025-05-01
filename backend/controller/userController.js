@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import User from "../schema/userSchema.js";
 import {ENV} from '../constant/index.js'
 import JWT from "jsonwebtoken";
