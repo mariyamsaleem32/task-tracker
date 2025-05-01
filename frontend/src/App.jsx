@@ -1,11 +1,10 @@
-import React from 'react';
-import Routing from './routes/routes.jsx';
-
+import 'react-toastify/dist/ReactToastify.css';
+import Routing from './routes.jsx';
 
 const App = () => {
-  return (
-    <Routing/>
-  );
+    return (
+        <Routing/>
+    );
 };
 
 export default App;

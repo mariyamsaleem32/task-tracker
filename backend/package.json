@@ -2,7 +2,6 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
@@ -10,19 +9,19 @@
   },
   "author": "mariyam saleem",
   "license": "ISC",
-  "description": "task tracker app",
+  "type": "module",
+  "description": " A Task-Treacker-website",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "chalk": "^5.4.1",
+    "cloudinary": "^2.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "helmet": "^8.1.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.14.0",
+    "mongoose": "^8.14.1",
     "multer": "^1.4.5-lts.2",
     "nodemon": "^3.1.10",
-    "path": "^0.12.7"
+    "streamifier": "^0.1.1"
   }
 }

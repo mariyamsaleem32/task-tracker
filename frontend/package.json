@@ -1,5 +1,5 @@
 {
-  "name": "task-tracker",
+  "name": "frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,11 +10,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "antd": "^5.24.8",
-    "firebase": "^11.6.1",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@reduxjs/toolkit": "^2.7.0",
+    "antd": "^5.24.9",
+    "axios": "^1.9.0",
+    "bootstrap": "^5.3.5",
+    "font-awesome": "^4.7.0",
+    "formik": "^2.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.5.2"
+    "react-hook-form": "^7.56.1",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.5.3",
+    "react-toastify": "^11.0.5",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.19.1",
+    "uuid": "^11.1.0",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
